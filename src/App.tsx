@@ -9,6 +9,11 @@ import { Photo } from "./components/Photo";
 function App() {
     let photo_array: Photo[] = [];
 
+    const [clicks, setClicks] = useState(0);
+    const handleClicks = () => {
+        setClicks(clicks + 1);
+    };
+
     const [photo, setPhoto] = useState<Photo>();
     useEffect(() => {
         const fetchData = async () => {
@@ -24,12 +29,7 @@ function App() {
                 photo_array.push(photo);
             }
         }
-    }, []);
-
-    const [clicks, setClicks] = useState(0);
-    const handleClicks = () => {
-        setClicks(clicks + 1);
-    };
+    }, [clicks]);
 
     return (
         <div className="App">
