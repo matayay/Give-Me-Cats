@@ -1,5 +1,6 @@
 import { FC } from "react";
 import { Photo } from "./Photo";
+import "../stylesheets/History.css";
 
 interface Props {
     photo_array: Photo[];

@@ -7,7 +7,7 @@ import axios from "axios";
 import { Photo } from "./components/Photo";
 
 function App() {
-    let photo_array: Photo[] = [];
+    const [photo_array, setArray] = useState<Photo[]>([]);
 
     const [clicks, setClicks] = useState(0);
     const handleClicks = () => {
@@ -25,8 +25,9 @@ function App() {
 
         if (clicks > 0) {
             fetchData();
-            if (photo_array && photo) {
+            if (photo) {
                 photo_array.push(photo);
+                setArray(photo_array);
             }
         }
     }, [clicks]);
@@ -35,7 +36,7 @@ function App() {
         <div className="App">
             <History photo_array={photo_array} />
             <Discovery handleClicks={handleClicks} photo={photo} />
-            <BanList photo={photo} />
+            <BanList />
         </div>
     );
 }
