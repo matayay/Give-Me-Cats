@@ -3,7 +3,7 @@ import { Photo } from "./Photo";
 
 interface Props {
     handleClicks: () => void;
-    photo: Photo;
+    photo: Photo | undefined;
 }
 
 const Discovery: FC<Props> = (props) => {

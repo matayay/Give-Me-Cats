@@ -31,15 +31,13 @@ function App() {
         setClicks(clicks + 1);
     };
 
-    if (photo) {
-        return (
-            <div className="App">
-                <History photo={photo} photo_array={photo_array} />
-                <Discovery handleClicks={handleClicks} photo={photo} />
-                <BanList photo={photo} />
-            </div>
-        );
-    }
+    return (
+        <div className="App">
+            <History photo_array={photo_array} />
+            <Discovery handleClicks={handleClicks} photo={photo} />
+            <BanList photo={photo} />
+        </div>
+    );
 }
 
 export default App;

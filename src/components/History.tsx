@@ -2,7 +2,6 @@ import { FC } from "react";
 import { Photo } from "./Photo";
 
 interface Props {
-    photo: Photo;
     photo_array: Photo[];
 }
 
