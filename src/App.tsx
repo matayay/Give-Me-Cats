@@ -4,47 +4,39 @@ import History from "./components/History";
 import Discovery from "./components/Discovery";
 import BanList from "./components/BanList";
 import axios from "axios";
-
-interface Photo {
-    id: number;
-    sol: number;
-    camera: {
-        id: number;
-        name: string;
-        rover_id: number;
-        full_name: string;
-    };
-    img_src: string;
-    earth_date: string;
-    rover: {
-        id: number;
-        name: string;
-        landing_date: string;
-        launch_date: string;
-        status: string;
-    };
-}
+import { Photo } from "./components/Photo";
 
 function App() {
-    const [photos, setPhotos] = useState<Photo[]>();
+    let photo_array: Photo[] = [];
 
+    const [photo, setPhoto] = useState<Photo>();
     useEffect(() => {
         const fetchData = async () => {
             const response = await axios.get(
-                "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date=2015-11-13&api_key=BlUubwxNmhlkloB266e2MDcYRzk4ayjCHyhdWnjR"
+                "https://api.thecatapi.com/v1/images/search?order=RAND&has_breeds=1&api_key=live_BCotpnlCcvjeC7WEza4FwLN7jhW4QnqySiKgFUgv9ejyAxB9d7xoswbs9bY9IbdI"
             );
-
-            setPhotos(response.data.photos);
+            setPhoto(response.data[0]);
         };
-        fetchData();
+
+        if (clicks > 0) {
+            fetchData();
+            if (photo_array && photo) {
+                photo_array.push(photo);
+            }
+        }
     }, []);
 
-    if (photos) {
+    const [clicks, setClicks] = useState(0);
+    const handleClicks = () => {
+        setClicks(clicks + 1);
+    };
+
+    if (photo) {
         return (
             <div className="App">
-                <History />
-                <Discovery />
-                <BanList />
+                <History photo={photo} photo_array={photo_array} />
+                <Discovery handleClicks={handleClicks} photo={photo} />
+                <BanList photo={photo} />
             </div>
         );
     }

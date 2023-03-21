@@ -1,4 +1,11 @@
-const BanList = () => {
+import { FC } from "react";
+import { Photo } from "./Photo";
+
+interface Props {
+    photo: Photo;
+}
+
+const BanList: FC<Props> = (props) => {
     return <div className="BanList"></div>;
 };
 
