@@ -8,11 +8,14 @@ import { Photo } from "./components/Photo";
 
 function App() {
     const [photo_array, setArray] = useState<Photo[]>([]);
-    const [fetch, setFetch] = useState(true);
+    const [lock, setLock] = useState(false);
 
     const [clicks, setClicks] = useState(0);
     const handleClicks = () => {
-        setClicks(clicks + 1);
+        if (!lock) {
+            setClicks(clicks + 1);
+            setLock(true);
+        }
     };
 
     const [photo, setPhoto] = useState<Photo>();
@@ -22,15 +25,14 @@ function App() {
                 "https://api.thecatapi.com/v1/images/search?order=RAND&has_breeds=1&api_key=live_BCotpnlCcvjeC7WEza4FwLN7jhW4QnqySiKgFUgv9ejyAxB9d7xoswbs9bY9IbdI"
             );
             setPhoto(response.data[0]);
-            setFetch(true);
+            setLock(false);
         };
 
-        if (clicks > 0 && fetch) {
+        if (clicks > 0 && lock) {
             fetchData();
             if (photo) {
                 photo_array.push(photo);
                 setArray(photo_array);
-                setFetch(false);
             }
         }
     }, [clicks]);
