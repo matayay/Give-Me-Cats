@@ -14,6 +14,11 @@ const Discovery: FC<Props> = (props) => {
                 <h1>UNLIMITED CATS!!!</h1>
                 <div className="curr-cat">
                     <h2>{props.photo.breeds[0].name}</h2>
+                    <div className="attributes">
+                        <h3>{props.photo.breeds[0].origin}</h3>
+                        <h3>{props.photo.breeds[0].life_span}</h3>
+                        <h3>{props.photo.breeds[0].weight.imperial} in</h3>
+                    </div>
                     <img src={props.photo.url} />
                 </div>
                 <button onClick={props.handleClicks}>Give me CATS</button>

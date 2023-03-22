@@ -45,6 +45,20 @@
     border-radius: 3rem;
 }
 
+.attributes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.attributes h3 {
+    background-color: antiquewhite;
+    padding: 0.5rem 1rem;
+    border-radius: 1rem;
+    font-size: 0.8rem;
+    margin: 0;
+}
+
 @media (max-width: 850px) {
     .Discovery h1 {
         font-size: 1.5rem;

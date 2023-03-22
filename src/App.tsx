@@ -5,9 +5,13 @@ import Discovery from "./components/Discovery";
 import BanList from "./components/BanList";
 import axios from "axios";
 import { Photo } from "./components/Photo";
+const API_KEY = import.meta.env.VITE_APP_API_KEY;
 
 function App() {
     const [photo_array, setArray] = useState<Photo[]>([]);
+    const [qualities, setQualities] = useState<string[]>([]);
+    const [bans, setBans] = useState<string[]>([]);
+
     const [lock, setLock] = useState(false);
 
     const [clicks, setClicks] = useState(0);
@@ -22,7 +26,7 @@ function App() {
     useEffect(() => {
         const fetchData = async () => {
             const response = await axios.get(
-                "https://api.thecatapi.com/v1/images/search?order=RAND&has_breeds=1&api_key=live_BCotpnlCcvjeC7WEza4FwLN7jhW4QnqySiKgFUgv9ejyAxB9d7xoswbs9bY9IbdI"
+                `https://api.thecatapi.com/v1/images/search?order=RAND&has_breeds=1&api_key=${API_KEY}`
             );
             setPhoto(response.data[0]);
             setLock(false);
