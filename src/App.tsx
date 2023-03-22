@@ -9,11 +9,11 @@ const API_KEY = import.meta.env.VITE_APP_API_KEY;
 
 function App() {
     const [photo_array, setArray] = useState<Photo[]>([]);
+
     const [qualities, setQualities] = useState<string[]>([]);
     const [bans, setBans] = useState<string[]>([]);
 
     const [lock, setLock] = useState(false);
-
     const [clicks, setClicks] = useState(0);
     const handleClicks = () => {
         if (!lock) {
