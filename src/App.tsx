@@ -8,10 +8,14 @@ import { Photo } from "./components/Photo";
 const API_KEY = import.meta.env.VITE_APP_API_KEY;
 
 function App() {
-    const [photo_array, setArray] = useState<Photo[]>([]);
-
-    const [qualities, setQualities] = useState<string[]>([]);
     const [bans, setBans] = useState<string[]>([]);
+    const handleBan = (attr: string) => {
+        setBans((prevBans) => [...prevBans, attr]);
+    };
+
+    const removeBan = (attr: string) => {
+        setBans((prevBans) => prevBans.filter((value) => value !== attr));
+    };
 
     const [lock, setLock] = useState(false);
     const [clicks, setClicks] = useState(0);
@@ -22,6 +26,7 @@ function App() {
         }
     };
 
+    const [photo_array, setArray] = useState<Photo[]>([]);
     const [photo, setPhoto] = useState<Photo>();
     useEffect(() => {
         const fetchData = async () => {
@@ -35,8 +40,7 @@ function App() {
         if (clicks > 0 && lock) {
             fetchData();
             if (photo) {
-                photo_array.push(photo);
-                setArray(photo_array);
+                setArray((prevArray) => [...prevArray, photo]);
             }
         }
     }, [clicks]);
@@ -44,8 +48,12 @@ function App() {
     return (
         <div className="App">
             <History photo_array={photo_array} />
-            <Discovery handleClicks={handleClicks} photo={photo} />
-            <BanList />
+            <Discovery
+                handleClicks={handleClicks}
+                handleBans={handleBan}
+                photo={photo}
+            />
+            <BanList bans={bans} removeBan={removeBan} />
         </div>
     );
 }

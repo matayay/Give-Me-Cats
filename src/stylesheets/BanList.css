@@ -9,3 +9,20 @@
     overflow: scroll;
     position: sticky;
 }
+
+.ban {
+    background-color: antiquewhite;
+    padding: 0.5rem 1rem;
+    border-radius: 1rem;
+    font-size: 0.8rem;
+    cursor: pointer;
+}
+
+h3.ban {
+    margin-top: 1rem;
+    margin-bottom: 0;
+}
+
+.BanList h1 {
+    color: black;
+}
