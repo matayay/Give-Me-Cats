@@ -49,18 +49,29 @@
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.attributes h3 {
-    background-color: antiquewhite;
-    padding: 0.5rem 1rem;
-    border-radius: 1rem;
-    font-size: 0.8rem;
-    margin: 0;
+    flex-direction: column;
+    gap: 0.8rem;
 }
 
 .origin {
     cursor: pointer;
+    font-size: 1rem;
+    margin: 0;
+    background-color: antiquewhite;
+    padding: 0.5rem 1rem;
+    border-radius: 1rem;
+}
+
+.nums {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.nums h3 {
+    font-size: 1rem;
+    margin: 0;
 }
 
 @media (max-width: 850px) {

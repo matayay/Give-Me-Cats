@@ -28,8 +28,10 @@ const Discovery: FC<Props> = (props) => {
                         >
                             {props.photo.breeds[0].origin}
                         </h3>
-                        <h3>{props.photo.breeds[0].life_span} yrs</h3>
-                        <h3>{props.photo.breeds[0].weight.imperial} in</h3>
+                        <div className="nums">
+                            <h3>{props.photo.breeds[0].life_span} yrs</h3>
+                            <h3>{props.photo.breeds[0].weight.imperial} in</h3>
+                        </div>
                     </div>
                     <img src={props.photo.url} />
                 </div>
