@@ -26,3 +26,22 @@ h3.ban {
 .BanList h1 {
     color: black;
 }
+
+@media (max-width: 600px) {
+    .BanList h1 {
+        font-size: 0.8rem;
+    }
+
+    .ban {
+        padding: 0.2rem 0.5rem;
+        border-radius: 0.5rem;
+        font-size: 0.4rem;
+    }
+}
+
+@media (max-width: 350px) {
+    .BanList {
+        height: 15%;
+        min-width: 100vw;
+    }
+}

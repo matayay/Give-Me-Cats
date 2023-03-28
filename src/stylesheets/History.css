@@ -30,3 +30,20 @@
 .History h1 {
     color: black;
 }
+
+@media (max-width: 600px) {
+    .History h1 {
+        font-size: 0.8rem;
+    }
+
+    .hist-item h3 {
+        font-size: 0.6rem;
+    }
+}
+
+@media (max-width: 350px) {
+    .History {
+        height: 15%;
+        min-width: 100vw;
+    }
+}

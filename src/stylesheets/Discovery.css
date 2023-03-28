@@ -79,3 +79,48 @@
         font-size: 1.5rem;
     }
 }
+
+@media (max-width: 600px) {
+    .Discovery h1 {
+        font-size: 1rem;
+    }
+
+    .Discovery button {
+        padding: 0.5rem 1rem;
+        border-radius: 1rem;
+    }
+
+    .Discovery {
+        height: 50%;
+    }
+
+    .curr-cat h2 {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 500px) {
+    .Discovery h1 {
+        font-size: 0.8rem;
+    }
+
+    .curr-cat h2 {
+        font-size: 0.6rem;
+    }
+
+    .origin {
+        font-size: 0.6rem;
+        padding: 0.2rem 0.5rem;
+        border-radius: 0.7rem;
+    }
+
+    .nums h3 {
+        font-size: 0.5rem;
+    }
+}
+
+@media (max-width: 350px) {
+    .Discovery {
+        min-width: 80%;
+    }
+}
