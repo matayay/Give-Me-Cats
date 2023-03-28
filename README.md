@@ -1,4 +1,4 @@
-# Web Development Project 4 - _Veni Vici_
+# Give Me Cats
 
 Submitted by: **Matayay Karuna**
 
@@ -6,36 +6,13 @@ This web app: **Fetches data from the Cat API and displays random cat images whe
 A history of all cats seen will be displayed on the left and on the right is a ban list. No cats
 with an orgin from any of the banned countries will be able to be displayed.**
 
-Time spent: **10** hours spent in total
-
-## Required Features
-
-The following **required** functionality is completed:
-
--   [x] **Clicking a button creates a new API fetch request and displays at least three attributes from the returned JSON data**
--   [x] **Only one item/API call is viewable at a time**
--   [x] **API calls appear random to the user**
--   [x] **At least one image is displayed per API call**
--   [x] **Clicking on a displayed value for one attribute adds it to a displayed ban list**
--   [x] **Attributes on the ban list prevent further images/API results with that attribute from being displayed**
-
-The following **optional** features are implemented:
-
--   [x] Users can see a stored history of their previously viewed items from their session
-
-The following **additional** features are implemented:
-
 ## Video Walkthrough
 
-Here's a walkthrough of implemented user stories:
+Here's a walkthrough of some implemented features.
 
 ![](./src/assets/cat.gif)
 
 GIF created with Kap
-
-## Notes
-
-Took a while to figure out how to instantly render banned attributes after they were clicked.
 
 ## License
 
